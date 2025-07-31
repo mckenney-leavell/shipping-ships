@@ -1,0 +1,47 @@
+
+body {
+    background-color: lightblue;
+    margin: 20px;
+}
+
+ul,li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.line-item {
+    background-color: white;
+    list-style-type: none;
+    padding: 10px;
+    margin: 5px;
+    justify-content: center;
+}
+
+#dockList{
+    border: dashed, 2px, lightseagreen;
+    padding: 10px;
+    margin: 10px;
+    flex: 1 1 0
+}
+
+#haulerList{
+    border: dashed, 2px, lightseagreen;
+    padding: 10px;
+    margin: 10px;
+    flex: 1 1 0
+}
+
+#cargoShipList{
+    border: dashed, 2px, lightseagreen;
+    padding: 10px;
+    margin: 10px;
+    flex: 1 1 0
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+
