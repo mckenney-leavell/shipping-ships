@@ -1,11 +1,12 @@
 import { getShips, getHaulers } from "./database.js";
 
 export const shipList = () => {
-  const ships = getShips();
+  let ships = getShips();
+  const sortedShips = ships.sort((a, b) => a.name.localeCompare(b.name))
 
   let shipHTML = "<ul>";
 
-  for (const ship of ships) {
+  for (const ship of sortedShips) {
     // Convert each ship object to an <li> and append to the shipHTML string
     shipHTML += `
             <li class="line-item" data-type="shipping" data-shipName="${ship.name}" data-haulerId="${ship.haulerId}">${ship.name}</li>    
