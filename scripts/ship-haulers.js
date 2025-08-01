@@ -3,10 +3,11 @@ import { getHaulers, getShips } from "./database.js"
 
 export const haulerList = () => {
     const haulers = getHaulers()
+    const sortedHaulers = haulers.sort((a, b) => a.name.localeCompare(b.name))
 
     let haulerHTML = "<ul>"
 
-    for (const hauler of haulers) {
+    for (const hauler of sortedHaulers) {
         // Convert each hauler object to an <li> and append to the haulerHTML string
         haulerHTML += `
             <li class="line-item" data-type="hauler" data-id="${hauler.id}">${hauler.name}</li>    

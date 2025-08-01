@@ -4,11 +4,12 @@ import { getDocks, getHaulers } from "./database.js"
 
 export const DockList = () => {
     const docks = getDocks()
+    const sortedDocks = docks.sort((a, b) => a.location.localeCompare(b.location))
 
     let docksHTML = "<ul>"
     // const sortedDocks = [docks].sort((a, b) => a.type.localeCompare(b.type))
 
-    for (const dock of docks) {
+    for (const dock of sortedDocks) {
         // Convert each dock object to an <li> and append to the docksHTML string
         docksHTML += `
             <li class="line-item" data-type="dock" data-id="${dock.id}" data-location="${dock.location}">${dock.location} can hold ${dock.volume} million tons of cargo</li>    
